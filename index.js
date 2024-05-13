@@ -10,11 +10,25 @@ submit.addEventListener("click", () => {
 let botonesNum = document.querySelectorAll(".btn")
 let selectedNumSpan = document.querySelector("#selected");
 
-let numero = 0;
+let numero = 0
 
 botonesNum.forEach((boton) => {
-    boton.addEventListener("click", (evento) => {
-        numero = evento.target.dataset.num;
-        selectedNumSpan.innerHTML += numero;
+    
+    boton.addEventListener("click", (event) => {
+
+        botonesNum.forEach((btn) => {
+            btn.classList.remove("active");
+        });
+
+        event.target.classList.add("active");
+        
+        numero = event.target.dataset.num;
+        selectedNumSpan.innerHTML = numero;
     })
+    
 })
+
+
+
+
+

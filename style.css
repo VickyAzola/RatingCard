@@ -18,15 +18,16 @@
 body {
     min-height: 100vh;
     display: grid;
-    place-items: center;
+    place-content: center;
     background: var(--VeryDarkBlue);
     font-family: 'Overpass', sans-serif;
 }
 
 .container {
     max-width: 20.5rem;
-    display: grid;
-    margin: 2rem .5rem;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
     background: var(--DarkBlue);
     border-radius: 1rem;
     padding: 1.5rem;
@@ -58,10 +59,9 @@ p {
 
 .flex-group {
     display: flex;
-    align-items: center; /*vertical*/
-    justify-content: space-between; /*hirizontal*/
-    gap: 1rem .2rem; /*vertical - horizontal*/
-    flex-wrap: wrap; /*para que no se arranque el contenido*/
+    align-items: center;
+    justify-content: space-between; 
+    gap: 1rem .2rem;
     padding: 1rem .3rem;
 }
 
@@ -71,7 +71,7 @@ p {
     width: 2.5rem;
     height: 2.5rem;
     border: none;
-    color: var(--LightGrey) ;
+    color: var(--LightGrey);
     background: var(--DarkBlue50);
     font-weight: bold;
     box-shadow: .1rem .1rem 1rem .1rem hsla(213, 12%, 14%, 0.5);
@@ -79,13 +79,18 @@ p {
 
 .btn:hover {
     color: var(--White) ;
-    background: var(--LightGrey);
+    background: var(--Orange);
     cursor: pointer;
 }
 
-.btn:active {
+.active {
+    margin: .5rem 0;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
     color: var(--White) ;
-    background: var(--Orange);
+    background: var(--LightGrey);
     cursor: pointer;
 }
 
@@ -107,8 +112,6 @@ p {
 
 .container-gracias {
     max-width: 20.5rem;
-    display: grid;
-    place-items: center;
     text-align: center;
     margin: 2rem .5rem;
     background: var(--DarkBlue);
@@ -122,8 +125,10 @@ p {
 }
 
 .selected {
+    margin: auto;
+    max-width: 12rem;
     margin-top: 1.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
     padding: .5rem 1.5rem;
     background-color: var(--DarkBlue50);
     color: var(--Orange);
@@ -135,9 +140,15 @@ p {
 .attribution { 
     font-size: 12px; 
     text-align: center; 
-    color: var(--White70)}
+    color: lightslategray;
+}
 
 .attribution a { 
-    color: var(--Orange); 
+    color: lightslategray;
+    font-weight: bold;
     text-decoration: none;;
+}
+
+.attribution a:hover {
+    color: var(--Orange); 
 }
